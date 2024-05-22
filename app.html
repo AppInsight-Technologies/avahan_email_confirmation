@@ -21,16 +21,17 @@
 
     const redirectUrl = new URL('https://avahan-dev.web.app');
     redirectUrl.search = urlParams.toString();
-
-        
+        if(type === 'invite'){
         setTimeout(function () {
-            if(type === 'invite'){
-                            window.location.href = redirectUrl.toString();;
- } else {
-                            window.location.href = 'avahan://confirm';
-
-}
-        }, 2000);
+                window.location.href = redirectUrl.toString();
+                }, 2000);
+        } else {
+setTimeout(function () {
+                window.location.href = 'avahan://confirm';
+                }, 2000);
+            
+        }
+        
 
     </script>
     <style>
