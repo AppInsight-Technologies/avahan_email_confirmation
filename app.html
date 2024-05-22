@@ -16,6 +16,10 @@
         }, 500);
 
     const urlParams = new URLSearchParams(window.location.search);
+
+        console.log("search is:", window.location.search);
+        console.log("urlParams is:", urlParams);
+        
     const type = urlParams.get('type');
 
     console.log("The value of 'type' is:", type);
