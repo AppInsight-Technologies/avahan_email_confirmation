@@ -18,6 +18,8 @@
     const urlParams = new URLSearchParams(window.location.search);
     const type = urlParams.get('type');
 
+    console.log("The value of 'type' is:", type);
+
     const redirectAfter = 2000; // Time in milliseconds before redirect
 
     function handleRedirect() {
