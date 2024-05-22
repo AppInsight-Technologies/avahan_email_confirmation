@@ -13,8 +13,23 @@
                 disableForReducedMotion: true
             });
         }, 500);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const type = urlParams.get('type');
+    // const access_token = urlParams.get('access_token');
+    // const token_type = urlParams.get('token_type');
+
+    const redirectUrl = new URL('https://avahan-dev.web.app');
+    redirectUrl.search = urlParams.toString();
+
+        
         setTimeout(function () {
-            window.location.href = 'avahan://confirm';
+            if(type === 'invite'){
+                            window.location.href = redirectUrl.toString();;
+ } else {
+                            window.location.href = 'avahan://confirm';
+
+}
         }, 2000);
 
     </script>
