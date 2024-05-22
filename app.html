@@ -5,6 +5,7 @@
     <title>Avahan</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
+        (function() {
         setTimeout(() => {
             confetti({
                 particleCount: 100,
@@ -16,21 +17,19 @@
 
     const urlParams = new URLSearchParams(window.location.search);
     const type = urlParams.get('type');
-    // const access_token = urlParams.get('access_token');
-    // const token_type = urlParams.get('token_type');
 
-    const redirectUrl = new URL('https://avahan-dev.web.app');
-    redirectUrl.search = urlParams.toString();
-        if(type === 'invite'){
-        setTimeout(function () {
-                window.location.href = redirectUrl.toString();
-                }, 2000);
-        } else {
-setTimeout(function () {
-                window.location.href = 'avahan://confirm';
-                }, 2000);
-            
-        }
+    const redirectAfter = 2000; // Time in milliseconds before redirect
+
+    function handleRedirect() {
+      if (type === 'invite') {
+        window.location.href = 'https://avahan-dev.web.app?' + urlParams.toString();
+      } else {
+        window.location.href = 'avahan://confirm';
+      }
+    }
+
+                setTimeout(handleRedirect, redirectAfter); // Changed to using setTimeout for the function call
+            })();
         
 
     </script>
