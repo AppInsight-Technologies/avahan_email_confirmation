@@ -29,7 +29,7 @@ const type = urlObj.searchParams.get('type');
 
     function handleRedirect() {
       if (type === 'invite') {
-        window.location.href = 'https://avahan-dev.web.app#' + urlParams.toString();
+        window.location.href = 'https://avahan-dev.web.app#' + urlObj.searchParams.toString();
       } else {
         window.location.href = 'avahan://confirm';
       }
