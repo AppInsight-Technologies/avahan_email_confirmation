@@ -25,7 +25,7 @@ const urlObj = new URL(currentUrl);
     const redirectAfter = 2000; // Time in milliseconds before redirect
 
     function handleRedirect() {
-      if (currentUrl.includes('type=type')) {
+      if (currentUrl.includes('type=invite')) {
         window.location.href = 'https://avahan-dev.web.app' + urlObj.hash;
       } else {
         window.location.href = 'avahan://confirm';
