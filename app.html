@@ -19,23 +19,14 @@
 
 
                             console.log("The value of 'currentUrl' is:", currentUrl);
-
 // Construct a URL object to extract its components
 const urlObj = new URL(currentUrl);
-
-
-                console.log("The value of 'urlObj' is:", urlObj);
-
-// Extract the value of the 'type' parameter from the URL
-const type = urlObj.searchParams.get('type');
-
-    console.log("The value of 'type' is:", type);
 
     const redirectAfter = 2000; // Time in milliseconds before redirect
 
     function handleRedirect() {
-      if (type === 'invite') {
-        window.location.href = 'https://avahan-dev.web.app#' + urlObj.searchParams.toString();
+      if (currentUrl.contains('type=type')) {
+        window.location.href = 'https://avahan-dev.web.app' + urlObj.hash;
       } else {
         window.location.href = 'avahan://confirm';
       }
