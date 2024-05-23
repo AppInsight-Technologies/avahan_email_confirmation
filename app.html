@@ -17,8 +17,14 @@
 
     const currentUrl = window.location.href;
 
+
+                            console.log("The value of 'currentUrl' is:", currentUrl);
+
 // Construct a URL object to extract its components
 const urlObj = new URL(currentUrl);
+
+
+                console.log("The value of 'urlObj' is:", urlObj);
 
 // Extract the value of the 'type' parameter from the URL
 const type = urlObj.searchParams.get('type');
