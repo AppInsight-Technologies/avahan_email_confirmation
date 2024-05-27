@@ -27,7 +27,7 @@ const urlObj = new URL(currentUrl);
     function handleRedirect() {
       if (currentUrl.includes('type=invite')) {
           const modifiedHash = urlObj.hash.slice(1);
-        window.location.href = 'https://avahan-dev.web.app' + (modifiedHash ? '?' + modifiedHash : '');
+        window.location.href = 'https://avahan-ceff5.web.app' + (modifiedHash ? '?' + modifiedHash : '');
       } else {
         window.location.href = 'avahan://confirm';
       }
